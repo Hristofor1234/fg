@@ -64,3 +64,36 @@ window.addEventListener("resize",function(){
     };
 });
 
+const openbtn = document.querySelector(".bk_log");
+const popup = document.querySelector("#popup");
+const closebtn = document.querySelector("#bk_");
+
+console.log(closebtn)
+
+
+openbtn.addEventListener("click", function() {
+    popup.style.display = "block";
+});
+
+closebtn.addEventListener("click", function() {
+    popup.style.display = "none";
+});
+
+window.addEventListener("click", function(event) {
+    if (event.target === popup) {
+        popup.style.display = "none";
+    }
+});
+document.addEventListener('keydown',function(event){
+    if(event.key==='Escape'){
+        closepopup();
+    }
+});
+function closepopup(){
+    popup.style.opacity="0";
+    setTimeout(function(){
+        popup.style.display="none";
+    },300);
+};
+
+
